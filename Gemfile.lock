@@ -1,8 +1,8 @@
 GIT
   remote: git://github.com/unepwcmc/ruby-deltek.git
-  revision: a4966c28ab45cd81b51171e4265e99b10bf7d936
+  revision: 2452b78910101ab42892f565c01195526615924f
   specs:
-    deltek (0.0.1)
+    deltek (0.1.0)
       httpclient (~> 2.6)
       nokogiri (~> 1.6)
       nori (~> 2.6)
