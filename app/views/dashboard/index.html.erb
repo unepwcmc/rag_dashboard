@@ -1,3 +1,18 @@
-<h1>Dashboard#index</h1>
-<p>Find me in app/views/dashboard/index.html.erb</p>
-<%= @deltek.inspect %>
+<div class="page-header">
+  <h1>RAG Projects Dashboard</h1>
+</div>
+
+<table class="table">
+  <thead>
+    <th>Project</th>
+    <th>Project Code</th>
+  </thead>
+  <tbody>
+    <% @deltek.each do |project| %>
+      <tr>
+        <td><%= project[:name] %></td>
+        <td><%= project[:bill_wbs1] %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

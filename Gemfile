@@ -26,6 +26,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'dotenv-rails', :groups => [:development, :test]
 gem "rubyntlm"
 gem "deltek", github: "unepwcmc/ruby-deltek"
+gem 'bootstrap-sass', '~> 3.3.6'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
