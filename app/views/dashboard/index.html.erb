@@ -6,12 +6,24 @@
   <thead>
     <th>Project</th>
     <th>Project Code</th>
+    <th>Project Manager</th>
+    <th>Total Budget</th>
+    <th>Staff Cost</th>
+    <th>Budget Remaining</th>
   </thead>
   <tbody>
     <% @deltek.each do |project| %>
       <tr>
         <td><%= project[:name] %></td>
-        <td><%= project[:bill_wbs1] %></td>
+        <td><%= project[:wbs1] %></td>
+        <td><%= project[:proj_mgr_name] %></td>
+        <td><%= number_to_currency(project[:total_project_cost], unit: '£') %></td>
+        <td><%= number_to_currency(project[:firm_cost], unit: '£') %></td>
+        <td>
+          <div class="progress">
+            <div class="progress-bar" role="progressbar" aria-valuenow="<%= project[:percentage_budget_remaining] %>" aria-valuemin="0" aria-valuemax="100" style="width: <%= project[:percentage_budget_remaining] %>%;"><%= project[:percentage_budget_remaining] %>%</div>
+          </div>
+        </td>
       </tr>
     <% end %>
   </tbody>
