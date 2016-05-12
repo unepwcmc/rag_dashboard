@@ -1,7 +1,8 @@
 class DashboardController < ApplicationController
   def index
-    deltek = Deltek.project("06405.00.E")
-    @deltek = [deltek]
+    #deltek = Deltek.project("06405.00.E")
+    #@deltek = [deltek]
+    @deltek =Deltek.projects
 
     @deltek.each do |project|
       project_manager = Deltek.employee(project[:proj_mgr]).values_at(:first_name,

@@ -27,6 +27,7 @@ gem 'dotenv-rails', :groups => [:development, :test]
 gem "rubyntlm"
 gem "deltek", github: "unepwcmc/ruby-deltek"
 gem 'bootstrap-sass', '~> 3.3.6'
+gem 'jquery-datatables-rails', '~> 3.3.0'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
