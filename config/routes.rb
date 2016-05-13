@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'clients', to: "clients#index", as: 'clients'
+  get 'employees', to: "employees#index", as: 'employees'
+  get 'projects', to: "dashboard#index", as: 'dashboard'
+
   root 'dashboard#index'
 
   # The priority is based upon order of creation: first created -> highest priority.

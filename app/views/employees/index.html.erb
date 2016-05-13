@@ -1,0 +1,16 @@
+<table class="table datatable">
+  <thead>
+    <th></th>
+    <th>Name</th>
+    <th>Email</th>
+  </thead>
+  <tbody>
+    <% @employees.each do |employee| %>
+      <tr>
+        <td><%= employee.data %></td>
+        <td><%= employee.full_name %></td>
+        <td><%= employee.data["e_mail"] %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

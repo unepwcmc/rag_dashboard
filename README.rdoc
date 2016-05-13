@@ -7,3 +7,9 @@ Because Deltek is slow and awful, RAG Dashboard works by keeping a local copy of
 You can pull everything from Deltek by running this handy rake task:
 
 `rake deltek:sync`
+
+This fill fetch everything, alternatively you can pull projects, clients or employees invididually with the following...
+
+`rake deltek:projects`
+`rake deltek:clients`
+`rake deltek:employees`

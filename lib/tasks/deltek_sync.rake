@@ -1,34 +1,29 @@
 namespace :deltek do
   desc "Sync Projects from Deltek to local database"
   task sync: :environment do
-    # Pull 10 projects, add them to the db if they don't exist, add a +10 offset and repeat until you return a batch of projects less than 10 in size
-    offset = 0
-    amount = 10
+    Rake::Task["deltek:projects"].invoke
+    Rake::Task["deltek:clients"].invoke
+    Rake::Task["deltek:employees"].invoke
+  end
 
-    puts "Adding Projects..."
-
-    loop do
-      projects = Deltek.projects(amount, offset)
-      projects.each do |p|
-        Project.create(data: p)
-      end
-      break if projects.count < amount
-      offset += amount
+  task projects: :environment do
+    projects = Deltek.projects(10000, 0)
+    projects.each do |p|
+      Project.create(data: p)
     end
+  end
 
-    puts "Done! \nAdding Clients..."
-
-    offset = 0
-
-    loop do
-      clients = Deltek.clients(amount, offset)
-      clients.each do |c|
-        Client.create(data: c)
-      end
-      break if clients.count < amount
-      offset += amount
+  task clients: :environment do
+    clients = Deltek.clients(10000, 0)
+    clients.each do |c|
+      Client.create(data: c)
     end
+  end
 
-    puts "Done!"
+  task employees: :environment do
+    employees = Deltek.employees(10000, 0)
+    employees.each do |e|
+      Employee.create(data: e)
+    end
   end
 end

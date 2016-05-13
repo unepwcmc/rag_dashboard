@@ -1,0 +1,16 @@
+<table class="table datatable">
+  <thead>
+    <th></th>
+    <th>Client ID</th>
+    <th>Name</th>
+  </thead>
+  <tbody>
+    <% @clients.each do |client| %>
+      <tr>
+        <td><%= client.data %></td>
+        <td><%= client.data["client"] %></td>
+        <td><%= client.data["name"] %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
